@@ -1,0 +1,10 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.section_content {
+  height: 300px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px;
+  border-bottom: 1px solid gray;
+}

@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.scss';
+import { Provider } from 'mobx-react';
+import { ConfigProvider } from 'antd';
+import { configure } from 'mobx';
+import zhCN from 'antd/es/locale/zh_CN';
+
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+
+import RouterContainer from './router/index';
+import RouteConfig from './router/routerConfigs';
+
+import store from './store/index';
+
+moment.locale('zh-CN');
+
+// 开启严格模式
+configure({
+  enforceActions: 'observed',
+});
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ConfigProvider locale={zhCN}>
+    <Provider store={store}>
+      <RouterContainer routeConfigs={RouteConfig}></RouterContainer>
+    </Provider>
+  </ConfigProvider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

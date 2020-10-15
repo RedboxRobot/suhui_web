@@ -1,0 +1,33 @@
+@mixin box-shadow {
+  box-shadow: 0 2px 18px 0 #eae6e6;
+}
+
+@mixin scroll-bar($width: 6px, $height: 6px, $radius: 10px, $color: #bbb) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+  }
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb:horizontal,
+  &::-webkit-scrollbar-thumb:vertical {
+    background-color: $color;
+    border-radius: $radius;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

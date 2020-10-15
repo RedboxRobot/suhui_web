@@ -1,0 +1,33 @@
+{
+  "globals": {
+    "fetch": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "react-app"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "eqeqeq": ["error", "always"],
+    "no-misleading-character-class": "off",
+    "no-case-declarations": "off",
+    "no-prototype-builtins": "off",
+    "no-empty": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "camelcase": "off",
+    "jsx-quotes": [2, "prefer-double"],
+    "generator-star-spacing": ["error", "after"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

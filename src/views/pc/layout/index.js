@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Layout, Menu } from 'antd';
 import { Switch, withRouter, Link, Redirect } from 'react-router-dom';
-import { SubRoutes } from '@/router/index';
+import { SubRoutes } from '@/router';
 
 import styles from './layout.module.scss';
 import FootPage from './footPage';
@@ -19,19 +19,23 @@ class WebLayout extends Component {
       currentSeleted: 'home',
       menus: [
         {
-          path: '/home',
+          value: 'home',
+          path: '/p/home',
           label: '首页'
         },
         {
-          path: '/product',
+          value: 'product',
+          path: '/p/product',
           label: '产品'
         },
         {
-          path: '/about',
+          value: 'about',
+          path: '/p/about',
           label: '关于我们'
         },
         {
-          path: '/customers',
+          value: 'customers',
+          path: '/p/customers',
           label: '客户案例'
         }
       ]
@@ -43,7 +47,6 @@ class WebLayout extends Component {
       .split('/')
       .slice(0, 3)
       .join('/');
-    currentSeleted = currentSeleted.slice(0, currentSeleted.lastIndexOf('/'));
 
     return currentSeleted;
   };

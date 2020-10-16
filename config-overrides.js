@@ -3,6 +3,7 @@ const { paths } = require('react-app-rewired');
 const {
   override,
   fixBabelImports,
+  addPostcssPlugins,
   addLessLoader,
   addWebpackPlugin,
   useEslintRc,
@@ -28,11 +29,25 @@ module.exports = override(
   //   'lodash',
   // ),
 
+  fixBabelImports('antd',
+    {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true
+    }
+  ),
+
   fixBabelImports('import', {
-    libraryName: 'antd',
-    libraryDirectory: 'es',
+    libraryName: 'antd-mobile',
     style: true
   }),
+
+  addPostcssPlugins([require('postcss-pxtorem')({
+    rootValue: 16,
+    propList: ['*']
+    // propList: ['*', '!border*', '!font-size*', '!letter-spacing'],
+    // propWhiteList: []
+  }),]),
 
   //全局引入antd的样式 import 'antd/dist/antd.css';
   addLessLoader({

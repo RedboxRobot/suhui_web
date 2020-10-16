@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Card } from 'antd';
+import { Card } from 'antd';
 import styles from './about.module.scss';
 import { PhoneOutlined, MailOutlined} from '@ant-design/icons';
 
@@ -12,7 +12,7 @@ class About extends Component {
     return (
       <div className={styles.about_content}>
         <div>
-          <Image src={require('@/static/images/about_us.jpg')} height={430} width={1200}/>
+          <img alt={'办公'} src={require('@/static/images/about_us.jpg')}/>
         </div>
         <section className={styles.section_content}>
           <div className={styles.title}>愿景</div>
@@ -39,7 +39,7 @@ class About extends Component {
             <Card bordered={false} className={styles.card_content}>
               <div className={styles.card_content_wraper}>
                 <MailOutlined style={{fontSize: '50px', color: '#26B2F0', margin: '10px'}}/>
-                <div className style={{marginLeft: '10px'}}>
+                <div style={{marginLeft: '10px'}}>
                   <p style={{color: '#26B2F0', fontSize: '18px'}}>邮箱</p>
                   <p style={{color: '#757575', fontSize: '18px'}}>lmj@qq.com</p>
                 </div>

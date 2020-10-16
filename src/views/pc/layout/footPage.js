@@ -54,11 +54,11 @@ class FootPage extends Component {
           {
             pageList.map((item, outdex) => {
               return (
-                <ul>
+                <ul key={item.title + outdex}>
                   {item.children.map(
                     (inner, index)=>{
                       return (
-                        <li className={index === 0 ? styles.li_first : ''}>
+                        <li key={index + inner.key} className={index === 0 ? styles.li_first : ''}>
                         {
                           index === 0 ?
                             inner :

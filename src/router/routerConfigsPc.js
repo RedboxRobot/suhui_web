@@ -1,34 +1,34 @@
-import WebLayout from '@/views/layout/index';
+import WebLayout from '@/views/pc/layout/index';
 import loadable from '@loadable/component';
 
 const Home = loadable(() =>
-  import('@/views/home/index')
+  import('@/views/pc/home/index')
 );
 
 const Product = loadable(() =>
-  import('@/views/product/index')
+  import('@/views/pc/product/index')
 );
 
 const About = loadable(() =>
-  import('@/views/about/index')
+  import('@/views/pc/about/index')
 );
 
-const RouteConfig = [
+const RouteConfigsPc = [
   {
     //一级路由的重定向
     path: '/',
     exact: true,
-    redirect: '/home/page'
+    redirect: '/p/home/page'
   },
   {
     title: '首页',
     //路由地址
-    path: '/home',
+    path: '/p/home',
     //组件
     component: WebLayout,
     children: [
       {
-        path: '/home/page',
+        path: '/p/home/page',
         component: Home
       }
     ]
@@ -36,12 +36,12 @@ const RouteConfig = [
   {
     title: '产品',
     //路由地址
-    path: '/product',
+    path: '/p/product',
     //组件
     component: WebLayout,
     children: [
       {
-        path: '/product/page',
+        path: '/p/product/page',
         component: Product
       }
     ]
@@ -49,12 +49,12 @@ const RouteConfig = [
   {
     title: '关于我们',
     //路由地址
-    path: '/about',
+    path: '/p/about',
     //组件
     component: WebLayout,
     children: [
       {
-        path: '/about/page',
+        path: '/p/about/page',
         component: About
       }
     ]
@@ -62,4 +62,4 @@ const RouteConfig = [
 
 
 ];
-export default RouteConfig;
+export default RouteConfigsPc;

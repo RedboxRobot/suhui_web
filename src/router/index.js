@@ -22,7 +22,6 @@ export class SubRoutes extends Component {
       <Route
         path={route.path}
         render={(props) => {
-          console.log('route', route.children);
           return (
             <route.component {...props} routes={route.children} />
           );

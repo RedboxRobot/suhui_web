@@ -11,7 +11,7 @@ const { Header, Footer, Content } = Layout;
 
 @inject('store')
 @observer
-class WebLayout extends Component {
+class WebLayoutPc extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,22 +20,22 @@ class WebLayout extends Component {
       menus: [
         {
           value: 'home',
-          path: '/p/home',
+          path: '/home',
           label: '首页'
         },
         {
           value: 'product',
-          path: '/p/product',
+          path: '/product',
           label: '产品'
         },
         {
           value: 'about',
-          path: '/p/about',
+          path: '/about',
           label: '关于我们'
         },
         {
           value: 'customers',
-          path: '/p/customers',
+          path: '/customers',
           label: '客户案例'
         }
       ]
@@ -48,6 +48,7 @@ class WebLayout extends Component {
       .slice(0, 3)
       .join('/');
 
+    currentSeleted = currentSeleted.slice(0, currentSeleted.lastIndexOf('/'));
     return currentSeleted;
   };
 
@@ -70,6 +71,7 @@ class WebLayout extends Component {
     const currentSeleted = this.getSelectedKey();
 
     return (
+
       <Layout className={styles.layout} style={{ minHeight: '100vh' }}>
         <Header className={styles.header}>
           <Link to="/">
@@ -111,4 +113,4 @@ class WebLayout extends Component {
   }
 }
 
-export default withRouter(WebLayout);
+export default withRouter(WebLayoutPc);

@@ -10,7 +10,7 @@ import { MenuOutlined } from '@ant-design/icons';
 
 @inject('store')
 @observer
-class WebLayout extends Component {
+class WebLayoutMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,22 +20,22 @@ class WebLayout extends Component {
       data: [
         {
           value: 'home',
-          path: '/m/home',
+          path: '/home',
           label: '首页'
         },
         {
           value: 'product',
-          path: '/m/product',
+          path: '/product',
           label: '产品'
         },
         {
           value: 'about',
-          path: '/m/about',
+          path: '/about',
           label: '关于我们'
         },
         {
           value: 'customers',
-          path: '/m/customers',
+          path: '/customers',
           label: '客户案例',
           isLeaf: true,
         }
@@ -61,10 +61,7 @@ class WebLayout extends Component {
 
   onChange = (value) => {
     const { history } = this.props;
-    console.log('his:', history.location.pathname);
-    console.log('value:', value[0]);
-    console.log(history.location.pathname.indexOf(value[0]));
-    if (history.location.pathname.indexOf(value[0]) !== 3) {
+    if (history.location.pathname.indexOf(value[0]) !== 1) {
       this.state.data.forEach((dataItem) => {
         if (value[0] === dataItem.value) {
           history.push(dataItem.path);
@@ -137,4 +134,4 @@ class WebLayout extends Component {
   }
 }
 
-export default withRouter(WebLayout);
+export default withRouter(WebLayoutMobile);

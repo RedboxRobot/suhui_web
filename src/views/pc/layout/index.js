@@ -71,7 +71,6 @@ class WebLayoutPc extends Component {
     const currentSeleted = this.getSelectedKey();
 
     return (
-
       <Layout className={styles.layout} style={{ minHeight: '100vh' }}>
         <Header className={styles.header}>
           <Link to="/">
@@ -81,7 +80,6 @@ class WebLayoutPc extends Component {
                 alt=""
                 style={{ width: 64, height: 60 }}
                 />
-              {/*<span className={styles.nav_logo_title}>速辉科技</span>*/}
             </div>
           </Link>
           <Menu

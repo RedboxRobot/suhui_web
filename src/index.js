@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './utils/rem';
+// import './utils/rem';
 import './index.scss';
 import { Provider } from 'mobx-react';
 import { ConfigProvider } from 'antd';
